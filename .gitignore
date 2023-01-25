@@ -5,3 +5,4 @@
 /.vs
 /Employee.API/bin/Debug/net6.0
 /Employee.API/obj
+/Employee.API/.vs/Employee.API
