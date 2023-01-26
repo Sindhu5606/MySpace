@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Employee.Business;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.API.Controllers
@@ -22,19 +23,15 @@ namespace Employee.API.Controllers
         [HttpGet(Name = "GetTestForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            //hey someone, could you look at this request and process it, return the data please
+            return null;
         }
 
         [HttpPut(Name = "UpdateExisting")]
         public string UpdateExisting(string id)
         {
-            return "Updating it from 2 to 3";
+            Human prem = new Human();
+            return prem.FetchUpdateText(id);
         }
 
         [HttpPost(Name = "CreateNew")]
